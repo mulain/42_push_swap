@@ -6,7 +6,7 @@
 /*   By: wmardin <wmardin@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/17 17:50:54 by wmardin           #+#    #+#             */
-/*   Updated: 2022/08/03 09:44:49 by wmardin          ###   ########.fr       */
+/*   Updated: 2022/08/03 10:35:30 by wmardin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ int	ft_generalorder(t_list *node1, t_list *node2, t_list **stack)
 
 	highnode = ft_gethighnode(stack);
 	lownode = ft_getlownode(stack);
-	if (node1 == lownode && node2 == highnode) //knudling
+	if (node1 == lownode && node2 == highnode)
 		return (0);
 	if (node1->rank < node2->rank
 		|| (node1 == highnode && node2 == lownode))
