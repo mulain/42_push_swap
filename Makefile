@@ -6,7 +6,7 @@
 #    By: wmardin <wmardin@student.42wolfsburg.de    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/10 21:26:51 by wmardin           #+#    #+#              #
-#    Updated: 2022/08/03 09:46:59 by wmardin          ###   ########.fr        #
+#    Updated: 2022/08/03 11:37:26 by wmardin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,13 +41,13 @@ LIBFT = libft/libft.a
 $(NAME): $(LIBFT) $(NAME2)
 	@$(CC) $(CFLAGS) $(SRC) $(LIBFT) -o $(NAME)
 	@echo '$(NAME) created.'
-	@echo '$(NAME2) created.'
 
 $(LIBFT):
-	@make -C ./libft
+	@make --no-print-directory -C ./libft
 	
 $(NAME2):
 	@$(CC) $(CFLAGS) $(SRC2) $(LIBFT) -o $(NAME2)
+	@echo '$(NAME2) created.'
 	
 all: $(NAME)
 
