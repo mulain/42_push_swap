@@ -1,5 +1,6 @@
 *.o
 *.a
+*.log
 a.out
 push_swap
 checker
