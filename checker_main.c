@@ -6,7 +6,7 @@
 /*   By: wmardin <wmardin@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/31 14:14:19 by wmardin           #+#    #+#             */
-/*   Updated: 2022/08/04 21:32:46 by wmardin          ###   ########.fr       */
+/*   Updated: 2022/08/04 22:55:15 by wmardin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ Double writes "Error" if push_swap is piped into checker without pipe
 modification. This is because push_swap writes on the stderr (fd2).
 To only get one "Error", combine outputs via 2>&1, e.g.:
 ARG="1 3 2 4 2"; ./push_swap $ARG 2>&1 | ./checker $ARG
+42 checker also behaves this way.
 */
 int	main(int argc, char **argv)
 {
@@ -45,19 +46,6 @@ int	main(int argc, char **argv)
 	ft_freeall(&stack_a, &stack_b, instruction);
 }
 
-int	ft_failargc(char *instruction)
-{
-	if (instruction == NULL)
-	{
-		write(1, "OK\n", 3);
-		free(instruction);
-		return (0);
-	}
-	write(1, "KO\n", 3);
-	free(instruction);
-	return (1);
-}
-
 int	ft_failstack_a(void)
 {
 	write(2, "Error\n", 6);
@@ -69,7 +57,7 @@ void	ft_finalcheck(t_list *stack_a, t_list *stack_b, int argc)
 	if (stack_a && !stack_b)
 	{
 		if (stack_a->rank == 1 && ft_lstlast(stack_a)->rank == argc - 1
-			&& ft_checkifordered(&stack_a))
+			&& ft_lstsize(stack_a) == argc - 1 && ft_checkifordered(&stack_a))
 			write(1, "OK\n", 3);
 	}
 	else

@@ -6,7 +6,7 @@
 /*   By: wmardin <wmardin@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 20:58:14 by wmardin           #+#    #+#             */
-/*   Updated: 2022/08/03 09:54:54 by wmardin          ###   ########.fr       */
+/*   Updated: 2022/08/04 22:52:08 by wmardin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,10 +60,9 @@ int		ft_calc_actions(t_list **stack_a, t_list **stack_b, t_list *nodefromb);
 int		ft_calc_movetotop(t_list **stack, t_list *node);
 
 //checker_main
-int		ft_failargc(char *instruction);
 int		ft_failstack_a(void);
-void	ft_freeall(t_list **stack_a, t_list **stack_b, char *instruction);
 void	ft_finalcheck(t_list *stack_a, t_list *stack_b, int argc);
+void	ft_freeall(t_list **stack_a, t_list **stack_b, char *instruction);
 
 //checker_util
 int		ft_do(char *instruction, t_list **stack_a, t_list **stack_b);
