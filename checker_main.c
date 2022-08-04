@@ -6,7 +6,7 @@
 /*   By: wmardin <wmardin@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/31 14:14:19 by wmardin           #+#    #+#             */
-/*   Updated: 2022/08/01 19:57:49 by wmardin          ###   ########.fr       */
+/*   Updated: 2022/08/04 21:32:46 by wmardin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ int	main(int argc, char **argv)
 		invalidcmd = ft_do(instruction, &stack_a, &stack_b);
 		if (invalidcmd)
 			return (ft_invalidcmd(&stack_a, &stack_b, instruction));
+		free (instruction);
 		instruction = get_next_line(0);
 	}
 	ft_finalcheck(stack_a, stack_b, argc);
@@ -63,32 +64,14 @@ int	ft_failstack_a(void)
 	return (1);
 }
 
-/* int	ft_failstack_a_old(char *instruction)
-{
-	write(2, "Error\n", 6);
-	if (ft_strncmp(instruction, "Error\n", 7) != 0)
-	{
-		write(1, "KO\n", 3);
-		free(instruction);
-		return (1);
-	}	
-	instruction = get_next_line(0);
-	if (instruction != NULL)
-	{
-		write(1, "KO\n", 3);
-		free(instruction);
-		return (1);
-	}
-	write(1, "OK\n", 3);
-	free(instruction);
-	return (0);
-} */
-
 void	ft_finalcheck(t_list *stack_a, t_list *stack_b, int argc)
 {
-	if (stack_a->rank == 1 && ft_lstlast(stack_a)->rank == argc - 1
-		&& ft_checkifordered(&stack_a) && !stack_b)
-		write(1, "OK\n", 3);
+	if (stack_a && !stack_b)
+	{
+		if (stack_a->rank == 1 && ft_lstlast(stack_a)->rank == argc - 1
+			&& ft_checkifordered(&stack_a))
+			write(1, "OK\n", 3);
+	}
 	else
 		write(1, "KO\n", 3);
 }

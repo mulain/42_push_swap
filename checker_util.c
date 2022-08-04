@@ -6,7 +6,7 @@
 /*   By: wmardin <wmardin@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 08:57:09 by wmardin           #+#    #+#             */
-/*   Updated: 2022/08/01 13:00:04 by wmardin          ###   ########.fr       */
+/*   Updated: 2022/08/04 21:35:18 by wmardin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,6 @@ int	ft_do(char *instruction, t_list **stack_a, t_list **stack_b)
 		ft_push(stack_a, stack_b);
 	else
 		return (ft_do1(instruction, stack_a, stack_b));
-	free(instruction);
 	return (0);
 }
 
@@ -62,7 +61,6 @@ int	ft_do1(char *instruction, t_list **stack_a, t_list **stack_b)
 	}
 	else
 		return (ft_do2(instruction, stack_a, stack_b));
-	free(instruction);
 	return (0);
 }
 
@@ -84,6 +82,5 @@ int	ft_do2(char *instruction, t_list **stack_a, t_list **stack_b)
 	}
 	else
 		return (1);
-	free(instruction);
 	return (0);
 }
