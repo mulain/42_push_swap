@@ -6,7 +6,7 @@
 /*   By: wmardin <wmardin@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/10 13:04:38 by wmardin           #+#    #+#             */
-/*   Updated: 2022/08/03 09:31:57 by wmardin          ###   ########.fr       */
+/*   Updated: 2022/08/04 08:44:04 by wmardin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,11 @@ int	main(int argc, char **argv)
 		return (1);
 	}
 	stack_b = NULL;
-	ft_algo_slices(&stack_a, &stack_b, argc - 1);
+	if (!ft_checkifordered(&stack_a))
+		ft_algo_slices(&stack_a, &stack_b, argc - 1);
 	ft_finalrotation(&stack_a);
 	ft_free_stack(&stack_a);
+	return (0);
 }
 
 void	ft_finalrotation(t_list **stack)

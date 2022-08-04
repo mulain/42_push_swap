@@ -6,7 +6,7 @@
 /*   By: wmardin <wmardin@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:47:21 by wmardin           #+#    #+#             */
-/*   Updated: 2022/08/03 10:09:30 by wmardin          ###   ########.fr       */
+/*   Updated: 2022/08/04 08:45:00 by wmardin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,8 @@ void	ft_algo_slices(t_list **stack_a, t_list **stack_b, int stacksize)
 		i++;
 		slices--;
 	}
-	while (ft_lstsize(*stack_a) > 3)
-	{
+	while (ft_lstsize(*stack_a) > 3 && !ft_checkifordered(stack_a))
 		ft_do_push_b(stack_a, stack_b);
-	}
 	if (!ft_checkifordered(stack_a))
 		ft_do_swap_a(stack_a);
 	ft_returntoa(stack_a, stack_b);
