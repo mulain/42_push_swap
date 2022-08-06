@@ -6,7 +6,7 @@
 /*   By: wmardin <wmardin@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/31 14:14:19 by wmardin           #+#    #+#             */
-/*   Updated: 2022/08/04 22:55:15 by wmardin          ###   ########.fr       */
+/*   Updated: 2022/08/06 09:09:23 by wmardin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,8 +57,10 @@ void	ft_finalcheck(t_list *stack_a, t_list *stack_b, int argc)
 	if (stack_a && !stack_b)
 	{
 		if (stack_a->rank == 1 && ft_lstlast(stack_a)->rank == argc - 1
-			&& ft_lstsize(stack_a) == argc - 1 && ft_checkifordered(&stack_a))
+			&& ft_checkifordered(&stack_a))
 			write(1, "OK\n", 3);
+		else
+			write(1, "KO\n", 3);
 	}
 	else
 		write(1, "KO\n", 3);

@@ -6,7 +6,7 @@
 /*   By: wmardin <wmardin@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:47:21 by wmardin           #+#    #+#             */
-/*   Updated: 2022/08/04 08:45:00 by wmardin          ###   ########.fr       */
+/*   Updated: 2022/08/06 08:48:32 by wmardin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,13 @@ Stack_a is divided into slices depending on its size. Only the lowest elements
 from stack_a - whose ranks are within the slice size - are pushed to stack_b.
 Empirically, the best solution appears to be to add a slice starting from
 n = 64 stack elements, then adding a slice every time n doubles.
-E.g.: n = 128 to 255 -> 2 slices; n = 256 to 511 -> 3 slices, etc.
-The last slice can be larger than the others (up to slices - 1), because
-dividing in ints. The extra nodes land in the last slice.
+E.g.:
+n < 64 -> 1 slice
+n from 64 to 127 -> 2 slices
+n from 128 to 255 -> 3 slices
+n from 256 to 511 -> 4 slices, etc.
+The last slice can be larger than the others (up to slices - 1) due to int
+division. The extra nodes land in the last slice.
 */
 void	ft_algo_slices(t_list **stack_a, t_list **stack_b, int stacksize)
 {
