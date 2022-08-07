@@ -6,7 +6,7 @@
 /*   By: wmardin <wmardin@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/13 14:11:04 by wmardin           #+#    #+#             */
-/*   Updated: 2022/08/04 21:43:47 by wmardin          ###   ########.fr       */
+/*   Updated: 2022/08/07 19:46:59 by wmardin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ void	ft_swap(t_list **stack)
 	t_list	*node2;
 	t_list	*node3;
 
-	if (!*stack)
-		return ;
 	if (ft_lstsize(*stack) < 2)
 		return ;
 	node1 = *stack;
@@ -48,7 +46,7 @@ void	ft_rotate(t_list **stack)
 	t_list	*node1;
 	t_list	*node2;
 
-	if (!*stack)
+	if (ft_lstsize(*stack) < 2)
 		return ;
 	node1 = *stack;
 	node2 = node1->next;
@@ -61,7 +59,7 @@ void	ft_revrotate(t_list **stack)
 {
 	t_list	*nodebeforelast;
 
-	if (!*stack)
+	if (ft_lstsize(*stack) < 2)
 		return ;
 	nodebeforelast = *stack;
 	while (nodebeforelast->next->next)
