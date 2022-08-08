@@ -23,7 +23,6 @@ typedef struct s_list
 	int				content;
 	struct s_list	*next;
 	int				rank;
-	int				*score;
 }	t_list;
 
 int		ft_atoi(const char *nptr);

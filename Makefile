@@ -6,7 +6,7 @@
 #    By: wmardin <wmardin@student.42wolfsburg.de    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/10 21:26:51 by wmardin           #+#    #+#              #
-#    Updated: 2022/08/03 11:37:26 by wmardin          ###   ########.fr        #
+#    Updated: 2022/08/08 11:32:10 by wmardin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -66,3 +66,9 @@ test:
 
 testnoflag:
 	$(CC) $(SRC) $(LIBFT)
+	
+autogit:
+	git add .
+	git commit -m "auto add & push"
+	git push
+	@echo 'git auto add & push performed.'
