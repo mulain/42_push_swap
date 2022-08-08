@@ -6,7 +6,7 @@
 #    By: wmardin <wmardin@student.42wolfsburg.de    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/26 13:39:51 by wmardin           #+#    #+#              #
-#    Updated: 2022/07/29 08:16:26 by wmardin          ###   ########.fr        #
+#    Updated: 2022/08/08 10:12:21 by wmardin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -79,20 +79,12 @@ SRC =	$(PATH_ft_is)/ft_isalnum.c\
 		$(PATH_ft_printf)/ft_printpointer.c\
 		$(PATH_ft_printf)/ft_printstring.c\
 		$(PATH_ft_printf)/ft_printunsignedint.c
-		
-#VPATH = obj #obj/ft_is obj/ft_list obj/ft_mem obj/ft_put obj/ft_string obj/ft_gnl obj/ft_printf
 
 OBJ = $(SRC:.c=.o)
 
 $(NAME): $(OBJ)
 	@$(AR) $(NAME) $(OBJ)
 	@echo '$(NAME) created.'
-
-#$(OBJ):
-#	mkdir obj -p
-#	mkdir obj/ft_is obj/ft_list obj/ft_mem obj/ft_put obj/ft_string obj/ft_gnl obj/ft_printf -p
-#	$(CC) $(CFLAGS) -c $< -o $@
-#	mv *.o obj
 
 all: $(NAME)
 
@@ -106,3 +98,5 @@ fclean: clean
 	@echo 'fclean done'
 
 re: fclean all
+
+.SILENT: $(OBJ)
