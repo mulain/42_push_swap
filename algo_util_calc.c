@@ -6,12 +6,22 @@
 /*   By: wmardin <wmardin@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/26 19:40:42 by wmardin           #+#    #+#             */
-/*   Updated: 2022/07/29 16:31:37 by wmardin          ###   ########.fr       */
+/*   Updated: 2022/08/08 12:20:30 by wmardin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+/*
+Returns the number of actions needed to correctly insert a node from 
+stack_b into stack_a. Takes into account combo rotation moves.
+	-	Calculates how many actions are needed to move the evaluated node
+		to the top of stack_b.
+	-	Calculates how many actions are needed to move the corresponding
+		node in stack_a ("insertion node") to the top of stack_a.
+Returns the sum of both actions if no combo moves are detected.
+Returns only the higher of both actions if combo moves are detected.
+*/
 int	ft_calc_actions(t_list **stack_a, t_list **stack_b, t_list *nodefromb)
 {
 	t_list	*insertionnode_a;
