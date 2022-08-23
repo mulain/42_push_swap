@@ -6,7 +6,7 @@
 /*   By: wmardin <wmardin@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:47:21 by wmardin           #+#    #+#             */
-/*   Updated: 2022/08/06 08:48:32 by wmardin          ###   ########.fr       */
+/*   Updated: 2022/08/23 14:07:23 by wmardin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int	ft_getslices(int stacksize)
 	int		i;
 	int		slices;
 
-	i = 2;
+	i = 1;
 	slices = 1;
 	while (64 * i <= stacksize)
 	{
