@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algo_util_check.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wmardin <wmardin@student.42wolfsburg.de    +#+  +:+       +#+        */
+/*   By: wmardin <wmardin@student.42wolfsburg.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/17 17:50:54 by wmardin           #+#    #+#             */
-/*   Updated: 2022/08/03 10:35:30 by wmardin          ###   ########.fr       */
+/*   Updated: 2022/11/12 21:05:33 by wmardin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 /*
 Only checks for order in the stack, not for completion.
 A list with nodes of rank 1, 3, 9 would be true.
+A list with nodes of rank 3, 9, 1 would also be true.
 */
 int	ft_checkifordered(t_list **stack)
 {
@@ -49,7 +50,7 @@ Checks whether node 1 should generally - not necessarily directly -
 precede node 2.
 the first and last nodes are in the correct order
 in regard to each other - whether the stack wraps.
-Defines variables to make the condition more readable. 
+Defines variables to make the condition more readable.
 */
 int	ft_generalorder(t_list *node1, t_list *node2, t_list **stack)
 {

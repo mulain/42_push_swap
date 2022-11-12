@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: wmardin <wmardin@student.42wolfsburg.de    +#+  +:+       +#+         #
+#    By: wmardin <wmardin@student.42wolfsburg.de>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/10 21:26:51 by wmardin           #+#    #+#              #
-#    Updated: 2022/08/08 11:32:10 by wmardin          ###   ########.fr        #
+#    Updated: 2022/11/12 21:06:57 by wmardin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,17 +44,17 @@ $(NAME): $(LIBFT) $(NAME2)
 
 $(LIBFT):
 	@make --no-print-directory -C ./libft
-	
+
 $(NAME2):
 	@$(CC) $(CFLAGS) $(SRC2) $(LIBFT) -o $(NAME2)
 	@echo '$(NAME2) created.'
-	
+
 all: $(NAME)
 
 clean:
 	@$(RM) $(OBJ)
 	@echo 'clean performed.'
-	
+
 fclean: clean
 	@$(RM) $(NAME) $(LIBFT) $(NAME2) a.out
 	@echo 'fclean performed.'
@@ -66,8 +66,8 @@ test:
 
 testnoflag:
 	$(CC) $(SRC) $(LIBFT)
-	
-autogit:
+
+git:
 	git add .
 	git commit -m "auto add & push"
 	git push

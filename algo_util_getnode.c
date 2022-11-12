@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algo_util_getnode.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wmardin <wmardin@student.42wolfsburg.de    +#+  +:+       +#+        */
+/*   By: wmardin <wmardin@student.42wolfsburg.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 16:31:50 by wmardin           #+#    #+#             */
-/*   Updated: 2022/08/03 09:48:35 by wmardin          ###   ########.fr       */
+/*   Updated: 2022/11/12 21:04:30 by wmardin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ t_list	*ft_getlownode(t_list **stack)
 
 /*
 Returns the node that should be at the top of
-stack_a so the node at the top of stack_b will be in the
+stack_a so the node with rank <noderank> will be in the
 correct order in stack_a after having been moved there.
 */
 t_list	*ft_getinsertionnode(t_list **stack, int noderank)
